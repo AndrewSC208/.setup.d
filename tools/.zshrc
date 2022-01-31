@@ -101,24 +101,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Andrews Customizations
-
-# add golang executable to path
+#
+# go-lang env vars
 export PATH=$PATH:/usr/local/go/bin
-# GOPATH is the root of your golang workspace, since I have many differnt projects that use
-# go I'm setting the GOPATH my home directory
-export GOPATH="$HOME/"
-# GOBIN is a env var that go uses to put binary files created using go install command.
-# Keeping /HOME/ clean, so reusing /usr/local/go/bin
-export GOBIN="/usr/local/go/bin"
+export GOPATH="$HOME/Projects"
+export GOBIN="$GOPATH/bin"
 
 # env helper aliases
 alias ll="ls -ltra"
 
-# aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+# git aliases
 alias gd="git diff"
 alias gcmsg="git commit -m"
 alias gitc="git checkout"
 alias gitm="git checkout master"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 
