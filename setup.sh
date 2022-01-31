@@ -24,6 +24,7 @@ then
   exit 1
 fi
 
+mkdir .ssh
 pub_key=$PWD/.ssh/id_rsa.pub
 key=$PWD/.ssh/id_rsa
 user_at_target=${user_name}@${target}
@@ -73,9 +74,11 @@ ssh -i ${key} -t ${user_at_target} mv .setup.d/tools/custom_spacevim_config.toml
 echo "#### update .zshrc file wiht my custom settings"
 ssh -i ${key} -t ${user_at_target} mv .setup.d/tools/.zshrc .zshrc
 
+ssh -i ${key} -t ${user_at_target} mkdir Projects
+
 echo "### clean up remote files"
 ssh -i ${key} -t ${user_at_target} rm -rf .setup.d tools.tar.gz
 
 echo "### cleanup local files"
-rm -rf tools.tar.gz .ssh
+rm -rf tools.tar.gz ${pub_key} ${key}
 
