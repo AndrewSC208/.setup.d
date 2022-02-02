@@ -103,8 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # Andrews Customizations
 #
 # go-lang env vars
+export GO111MODULE=on
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH="$HOME/Projects"
+export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 
 # env helper aliases
