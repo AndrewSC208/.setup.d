@@ -8,6 +8,7 @@ sudo apt install \
   ca-certificates \
   gnupg \
   lsb-release \
+  build-essential \
   apt-transport-https
 
 sudo apt-get update
